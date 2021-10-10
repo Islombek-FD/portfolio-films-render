@@ -1,3 +1,4 @@
+const elNavList = document.querySelector('.nav-list');
 const elForm = document.querySelector('.films-form');
 const elFilmsList = document.querySelector('.films-list');
 const elSelect = document.querySelector('.genres-select');
@@ -7,8 +8,23 @@ const elHeroContent = document.querySelector('.hero-content');
 const elBookmarkList = document.querySelector('.bookmark-list');
 const elModal = document.querySelector('.modal');
 const elModalContent = document.querySelector('.modal-list');
+const elHamburgerMenu = document.querySelector('.hamburger__menu');
 
 const bookmarkFilms = [];
+
+let elOpenMenu = false;
+elHamburgerMenu.addEventListener('click', () => {
+    if (!elOpenMenu) {
+        elNavList.classList.add('nav-list--open');
+        elHamburgerMenu.classList.add('open__menu');
+        elOpenMenu = true;
+    }
+    else {
+        elNavList.classList.remove('nav-list--open');
+        elHamburgerMenu.classList.remove('open__menu');
+        elOpenMenu = false;
+    }
+})
 
 function normalizeDate(format) {
     const date = new Date(format);
