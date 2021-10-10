@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- ========== Header ========== -->
+    <header class="header">
+        
+        <div class="container">
+            
+            <div class="header-top">
+                
+                <a class="logo" href="./index.html">
+                    <img src="./img/logo.png" alt="Logo" width="200" height="20">
+                </a>
+                
+                <nav class="nav">
+
+                    <ul class="nav-list">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">In Theaters</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Educational</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Press</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Social</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            
+            <div class="header-bottom">
+
+                <form class="films-form">
+                
+                    <select class="genres-select">
+                        <option value="All">All</option>
+                    </select>
+                    
+                    <select class="sort-select">
+                        <option value="0">A-Z</option>
+                        <option value="1">Z-A</option>
+                        <option value="2">New-Old</option>
+                        <option value="3">Old-New</option>
+                    </select>
+                    
+                    <input class="regexp-input" type="text" placeholder="Search film name ...">
+                    
+                    <button class="search-btn">Search</button>
+
+                </form>
+
+            </div>
+            
+        </div>
+        
+    </header>
+    <!-- ========== / Header ========== -->
+    
+    <!-- ========== Main ========== -->
+    <main class="main">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="container">
+                
+                <h2 class="hero-title visually-hidden">Films</h2>
+
+                <div class="hero-content">
+
+                    <div class="bookmark">
+                        <h3 class="bookmark-title">Selected films</h3>
+                        <ul class="bookmark-list"></ul>
+                    </div>
+                    
+                    <div class="films">
+                        <ul class="films-list"></ul>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+        <!-- / Hero Section -->
+
+        
+    </main>
+    <!-- ========== / Main ========== -->
+    
+    <!-- Modal -->
+    <div class="modal">
+
+        <div class="modal-content">
+
+            <div class="close-menu">
+                <span class="close-icon"></span>
+            </div>
+    
+            <ul class="modal-list"></ul>
+            
+        </div>
+
+    </div>
+    <!-- / Modal -->
+
+    <!-- JavaScript links -->
+    <script src="./js/films.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
