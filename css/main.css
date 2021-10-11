@@ -556,7 +556,7 @@ body {
 
     .nav-list {
         top: 100%;
-        row-gap: 30px;
+        row-gap: 10px;
     }
 
     .container {
