@@ -571,6 +571,9 @@ body {
     
     .hero-content--flex .bookmark {
         width: 180px;
+    }
+    
+    .hero-content--flex .bookmark-list {
         padding-bottom: 50px;
     }
     
