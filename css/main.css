@@ -551,7 +551,7 @@ body {
 
 @media only screen and (max-width: 510px) {
     body {
-        padding-top: 92px;
+        padding-top: 50px;
     }
 
     .container {
