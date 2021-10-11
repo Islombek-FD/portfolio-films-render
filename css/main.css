@@ -153,7 +153,7 @@ body {
 
 .films {
     min-height: 545px;
-    transition: all .0000000000000000000000000000000000001s ease;
+    transition: all .00002s ease;
     padding: 20px;
     background-color: #bbb;
 }
@@ -166,7 +166,7 @@ body {
     transform-origin: left;
     transform: scaleX(0);
     background-color: black;
-    transition: all .0000000000000000000000000000000000001s ease;
+    transition: all .00002s ease;
     overflow: auto;
 }
 
@@ -324,7 +324,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    padding: 50px 100px;
+    padding: 40px 60px;
     list-style: none;
     border: 3px solid #fff;
 }
@@ -495,6 +495,24 @@ body {
     
     .hero-content--flex .films .film-img {
         height: 250px;
+    }
+
+    .modal-content {
+        padding: 0;
+        border-color: transparent;
+    }
+
+    .modal-content .film-item {
+        width: 240px;
+    }
+
+    .modal-content .film-img {
+        height: 150px;
+    }
+
+    .close-menu {
+        top: -3px;
+        right: -18px;
     }
 }
 
