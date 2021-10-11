@@ -556,6 +556,7 @@ body {
 
     .nav-list {
         top: 100%;
+        column-gap: 200px;
     }
 
     .container {
