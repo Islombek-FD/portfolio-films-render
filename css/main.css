@@ -153,7 +153,7 @@ body {
 }
 
 .films {
-    min-height: 545px;
+    min-height: 100vh;
     transition: all .00000000000000001s ease;
     padding: 20px;
     background-color: #bbb;
