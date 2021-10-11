@@ -551,7 +551,11 @@ body {
 
 @media only screen and (max-width: 510px) {
     body {
-        padding-top: 50px;
+        padding-top: 92px;
+    }
+
+    .nav-list {
+        top: 100%;
     }
 
     .container {
