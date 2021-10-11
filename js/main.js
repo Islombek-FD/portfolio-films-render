@@ -1,4 +1,5 @@
 const elNavList = document.querySelector('.nav-list');
+const elHeroSection = document.querySelector('.hero');
 const elForm = document.querySelector('.films-form');
 const elFilmsList = document.querySelector('.films-list');
 const elSelect = document.querySelector('.genres-select');
@@ -110,24 +111,30 @@ function renderFilms(arr, node, more) {
         }
         const filmBookmarkBtn = document.createElement('button');
         const filmMoreBtn = document.createElement('button');
+        const filmBookmarkDeleteBtn = document.createElement('button');
         
         filmTitle.textContent = film.title.split(' ').slice(0, 2).join(' ');
         filmImg.setAttribute('src', film.poster);
         filmBookmarkBtn.textContent = 'Bookmark';
         filmMoreBtn.textContent = 'More';
-
+        filmBookmarkDeleteBtn.textContent = 'Delete';
+        
+        
         filmItem.classList.add('film-item');
         filmTitle.classList.add('film-title');
         filmImg.classList.add('film-img');
         filmBookmarkBtn.classList.add('bookmark-btn');
         filmMoreBtn.classList.add('more-btn');
+        filmBookmarkDeleteBtn.classList.add('bookmark-delete-btn');
         filmBookmarkBtn.dataset.bookmarkId = film.id;
         filmMoreBtn.dataset.moreId = film.id;
+        filmBookmarkDeleteBtn.dataset.bookmarkDeleteId = film.id;
     
         filmItem.appendChild(filmTitle);
         filmItem.appendChild(filmImg);
         filmItem.appendChild(filmMoreBtn);
         filmItem.appendChild(filmBookmarkBtn);
+        filmItem.appendChild(filmBookmarkDeleteBtn);
         filmItem.appendChild(filmInfo);
     
         node.appendChild(filmItem);
@@ -159,17 +166,34 @@ elForm.addEventListener('submit', (evt) => {
     renderFilms(filteredFilms, elFilmsList, false);
 })
 
-elFilmsList.addEventListener('click', (evt) => {
+elHeroSection.addEventListener('click', (evt) => {
     const moreFilm = [];
     if (evt.target.matches('.bookmark-btn')) {
         elHeroContent.classList.add('hero-content--flex');
         const bookmarkId = Number(evt.target.dataset.bookmarkId);
         const foundFilm = films.find(film => Number(film.id) === bookmarkId);
 
+        const bookmarkBtn = document.createElement('button');
+        bookmarkBtn.textContent = 'Delete';
+        bookmarkBtn.classList.add('bookmark-delete-btn');
+
         if (!bookmarkFilms.includes(foundFilm)) {
             bookmarkFilms.unshift(foundFilm);
         }
 
+        renderFilms(bookmarkFilms, elBookmarkList, false);
+    }
+    else if (evt.target.matches('.bookmark-close-menu')) {
+        elHeroContent.classList.remove('hero-content--flex');
+    }
+    else if (evt.target.matches('.bookmark-close-icon')) {
+        elHeroContent.classList.remove('hero-content--flex');
+    }
+    else if (evt.target.matches('.bookmark-delete-btn')) {
+        const bookmarkDeleteId = Number(evt.target.dataset.bookmarkDeleteId);
+        const foundFilmDelete = bookmarkFilms.findIndex(film => Number(film.id) === bookmarkDeleteId);
+        bookmarkFilms.splice(foundFilmDelete, 1);
+        
         renderFilms(bookmarkFilms, elBookmarkList, false);
     }
     else if (evt.target.matches('.more-btn')) {
@@ -179,9 +203,13 @@ elFilmsList.addEventListener('click', (evt) => {
         elModal.style.display = 'block';
         moreFilm.push(foundFilm);
         renderFilms(moreFilm, elModalContent, true);
-        
     }
 })
+
+
+// const elBookmarkItem = document.querySelectorAll('.bookmark-list .film-item');
+// console.log(elBookmarkItem);
+
 
 elModal.addEventListener('click', (evt) => {
     if (evt.target.matches('.modal')) {
@@ -194,3 +222,17 @@ elModal.addEventListener('click', (evt) => {
         elModal.style.display = 'none';
     }
 })
+
+
+
+// elBookmark.addEventListener('click', (evt) => {
+//     if (evt.target.matches('.close-menu')) {
+//         elBookmark.style.display = 'none';
+//         elFilms.style.display = 'block';
+
+//     }
+//     else if (evt.target.matches('.close-icon')) {
+//         elBookmark.style.display = 'none';
+//         elFilms.style.display = 'block';
+//     }
+// })
